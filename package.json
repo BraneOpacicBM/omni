@@ -6,6 +6,7 @@
     "pkg/*"
   ],
   "scripts": {
+    "bootstrap": "yarn && lerna bootstrap",
     "lint": "eslint ."
   },
   "devDependencies": {
