@@ -1,21 +1,33 @@
 import express from 'express';
 
+import createHandleRequest from './utils/createHandleRequest';
 import handleErrorMiddleware from './utils/handleErrorMiddleware';
 import notFoundMiddleware from './utils/notFoundMiddleware';
+
+import routes from '../app/routes';
 
 export default class OmniServer {
 	pluginApi = {};
 	plugins = [];
 
 	constructor() {
+		this.routes = [...routes];
+		this.pluginApi.addRoute = this.addRoute;
+
 		this.app = express();
 		this.app.disable('x-powered-by');
+	}
+
+	addRoute = route => {
+		this.routes[0].childRoutes.push(route);
 	}
 
 	start() {
 		this.plugins.forEach(plugin => {
 			plugin(this.pluginApi);
 		});
+
+		this.app.get('*', createHandleRequest(this.routes));
 
 		this.app.use(notFoundMiddleware);
 		this.app.use(handleErrorMiddleware);
