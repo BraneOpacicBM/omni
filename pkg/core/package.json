@@ -1,0 +1,12 @@
+{
+  "name": "@ocm/core",
+  "version": "0.0.0",
+  "description": "Omni core",
+  "repository": "chiel/omni",
+  "author": "chielkunkels",
+  "main": "dist/server",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

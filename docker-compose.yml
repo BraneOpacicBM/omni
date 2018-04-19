@@ -8,3 +8,21 @@ services:
     command: yarn watch:babel
     volumes:
     - .:/code
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: yarn watch:server
+    ports:
+    - 12831:12831
+    volumes:
+    - .:/code
+
+  webpack:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: yarn watch:webpack
+    volumes:
+    - .:/code
