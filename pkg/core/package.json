@@ -5,6 +5,7 @@
   "repository": "chiel/omni",
   "author": "chielkunkels",
   "main": "dist/server",
+  "browser": "dist/client",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.3",
