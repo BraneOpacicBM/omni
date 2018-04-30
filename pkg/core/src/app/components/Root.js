@@ -1,3 +1,5 @@
+import '../styles/base.css';
+
 import PT from 'prop-types';
 import React from 'react';
 import { Helmet } from 'react-helmet';

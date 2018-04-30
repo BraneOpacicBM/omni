@@ -1,0 +1,47 @@
+html {
+	box-sizing: border-box;
+	color: #444;
+	font: 300 16px/32px lato, helvetica neue, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 34px;
+}
+
+h2 {
+	font-size: 28px;
+}
+
+h3 {
+	font-size: 22px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+p {
+	margin: 0;
+
+	p + p {
+		margin: 32px 0 0;
+	}
+}

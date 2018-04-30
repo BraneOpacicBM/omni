@@ -1,3 +1,9 @@
+import CSSPlugin from 'modular-css-webpack/plugin';
+import postcssColorFunction from 'postcss-color-function';
+import postcssImport from 'postcss-import';
+import postcssInlineSVG from 'postcss-inline-svg';
+import postcssNested from 'postcss-nested';
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 const browsers = [
@@ -7,6 +13,19 @@ const browsers = [
 	'Firefox > 42',
 	'Opera > 14',
 	'Safari > 8',
+];
+
+const plugins = [
+	new CSSPlugin({
+		css: 'public/assets/omni.css',
+		map: { inline: false },
+		after: [
+			postcssImport(),
+			postcssNested,
+			postcssColorFunction,
+			postcssInlineSVG(),
+		],
+	}),
 ];
 
 module.exports = [
@@ -21,6 +40,7 @@ module.exports = [
 			__dirname: false,
 			__filename: false,
 		},
+		plugins,
 		module: {
 			rules: [
 				{
@@ -42,6 +62,10 @@ module.exports = [
 						},
 					},
 				},
+				{
+					test: /\.css$/,
+					use: 'modular-css-webpack/loader',
+				},
 			],
 		},
 	},
@@ -53,6 +77,7 @@ module.exports = [
 			filename: 'public/assets/omni.js',
 		},
 		devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
+		plugins,
 		module: {
 			rules: [
 				{
@@ -72,6 +97,10 @@ module.exports = [
 							],
 						},
 					},
+				},
+				{
+					test: /\.css$/,
+					use: 'modular-css-webpack/loader',
 				},
 			],
 		},
