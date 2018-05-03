@@ -1,9 +1,13 @@
+import inputsPlugin from '@ocm/inputs';
+
 import inputTypes from './inputs';
 import routes from './routes';
 
 export default class Omni {
 	pluginApi = { inputTypes };
-	plugins = [];
+	plugins = [
+		inputsPlugin,
+	];
 
 	constructor() {
 		this.routes = [...routes];

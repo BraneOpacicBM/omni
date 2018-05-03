@@ -1,0 +1,16 @@
+{
+  "name": "@ocm/inputs",
+  "version": "0.0.0",
+  "description": "Base inputs for Omni",
+  "repository": "chiel/omni",
+  "author": "chielkunkels",
+  "main": "dist",
+  "license": "MIT",
+  "dependencies": {
+    "hoist-non-react-statics": "^2.5.0",
+    "prop-types": "^15.6.1"
+  },
+  "peerDependencies": {
+    "react": "^16.3.2"
+  }
+}
