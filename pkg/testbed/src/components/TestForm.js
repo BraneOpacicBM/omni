@@ -24,6 +24,7 @@ export class TestForm extends React.PureComponent {
 			<form onSubmit={this.handleSubmit}>
 				<fields.first_name />
 				<fields.last_name />
+				<fields.password />
 				<Button primary submit>Submit</Button>
 			</form>
 		);
@@ -42,6 +43,13 @@ export default withForm(() => ({
 			type: 'text',
 			label: 'Last name',
 			placeholder: 'e.g. Doe',
+		},
+		password: {
+			type: 'password',
+			label: 'Password',
+			name: 'password',
+			placeholder: 'e.g. correct-horse-battery-staple',
+			hint: 'Maybe something that is not "password123".',
 		},
 	},
 }))(TestForm);
