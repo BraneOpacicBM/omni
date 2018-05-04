@@ -26,6 +26,7 @@ export class TestForm extends React.PureComponent {
 				<fields.first_name />
 				<fields.last_name />
 				<fields.password />
+				<fields.biography />
 				<Button primary submit>Submit</Button>
 			</form>
 		);
@@ -56,6 +57,15 @@ export default withForm(() => ({
 			hint: 'Maybe something that is not "password123".',
 			validators: [
 				validators.required('Please enter your password.'),
+			],
+		},
+		biography: {
+			type: 'textarea',
+			label: 'Biography',
+			name: 'biography',
+			placeholder: 'e.g. I have a horse. My horse is amazing.',
+			validators: [
+				validators.required('Please tell us about yourself.'),
 			],
 		},
 	},
