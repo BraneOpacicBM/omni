@@ -24,7 +24,8 @@ export class InputSingleOption extends React.PureComponent {
 		this.props.onUpdate(ev.target.value);
 	}
 
-	handleClear = () => {
+	handleClear = ev => {
+		ev.preventDefault();
 		this.props.onUpdate('');
 	}
 
@@ -50,7 +51,7 @@ export class InputSingleOption extends React.PureComponent {
 					<button
 						type="button"
 						className={css.clear}
-						onClick={this.handleClear}
+						onMouseDown={this.handleClear}
 						tabIndex={-1}
 					>
 						Clear selection
