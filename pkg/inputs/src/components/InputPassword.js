@@ -1,3 +1,4 @@
+import { classNames } from '@ocm/core';
 import PT from 'prop-types';
 import React from 'react';
 
@@ -40,8 +41,9 @@ export class InputText extends React.PureComponent {
 		const { ...props } = this.props;
 		const { showPassword } = this.state;
 
-		const buttonClasses = [css.icon, css.iconEye];
-		if (showPassword) buttonClasses.push(css.iconActive);
+		const buttonClasses = classNames(css.icon, css.iconEye, {
+			[css.iconActive]: showPassword,
+		});
 
 		delete props.onUpdate;
 
@@ -55,7 +57,7 @@ export class InputText extends React.PureComponent {
 				/>
 				<button
 					type="button"
-					className={buttonClasses.join(' ')}
+					className={buttonClasses}
 					onMouseDown={this.handleTogglePassword}
 					tabIndex={-1}
 				>
