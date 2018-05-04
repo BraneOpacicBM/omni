@@ -1,17 +1,23 @@
 import inputsPlugin from '@ocm/inputs';
 
 import inputTypes from './inputs';
+import sessionReducer from './reducers/session';
 import routes from './routes';
 
 export default class Omni {
-	pluginApi = { inputTypes };
 	plugins = [
 		inputsPlugin,
 	];
 
 	constructor() {
+		this.reducers = { session: sessionReducer };
 		this.routes = [...routes];
-		this.pluginApi.addRoute = this.addRoute;
+
+		this.pluginApi = {
+			inputTypes,
+			addRoute: this.addRoute,
+			reducers: this.reducers,
+		};
 	}
 
 	addRoute = route => {

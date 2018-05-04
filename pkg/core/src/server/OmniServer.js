@@ -1,6 +1,7 @@
 import express from 'express';
 
 import createHandleRequest from './utils/createHandleRequest';
+import createStoreMiddleware from './utils/createStoreMiddleware';
 import handleErrorMiddleware from './utils/handleErrorMiddleware';
 import notFoundMiddleware from './utils/notFoundMiddleware';
 
@@ -20,6 +21,7 @@ export default class OmniServer extends Omni {
 		});
 
 		this.app.use(express.static(`${__dirname}/public`));
+		this.app.use(createStoreMiddleware(this.reducers));
 
 		this.app.get('*', createHandleRequest(this.routes));
 
