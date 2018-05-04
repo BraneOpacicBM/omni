@@ -28,6 +28,7 @@ export class TestForm extends React.PureComponent {
 				<fields.password />
 				<fields.biography />
 				<fields.gender />
+				<fields.interests />
 				<Button primary submit>Submit</Button>
 			</form>
 		);
@@ -77,6 +78,16 @@ export default withForm(() => ({
 				{ label: 'Male', value: 'male' },
 				{ label: 'Female', value: 'female' },
 				{ label: 'Other', value: 'other' },
+			],
+		},
+		interests: {
+			type: 'multi_option',
+			label: 'Interests',
+			name: 'interests',
+			options: [
+				{ label: 'Coding', value: 'coding' },
+				{ label: 'Gaming', value: 'gaming' },
+				{ label: 'Surfing', value: 'surfing' },
 			],
 		},
 	},
