@@ -1,0 +1,9 @@
+{
+  "name": "@ocm/validators",
+  "version": "0.0.0",
+  "description": "Validators for Omni forms.",
+  "repository": "chiel/omni",
+  "author": "chielkunkels",
+  "main": "dist",
+  "license": "MIT"
+}

@@ -1,4 +1,5 @@
 import { Button, withForm } from '@ocm/core';
+import * as validators from '@ocm/validators';
 import PT from 'prop-types';
 import React from 'react';
 
@@ -38,6 +39,9 @@ export default withForm(() => ({
 			name: 'name.first',
 			label: 'First name',
 			placeholder: 'e.g. John',
+			validators: [
+				validators.required('Please enter your first name'),
+			],
 		},
 		last_name: {
 			type: 'text',
@@ -50,6 +54,9 @@ export default withForm(() => ({
 			name: 'password',
 			placeholder: 'e.g. correct-horse-battery-staple',
 			hint: 'Maybe something that is not "password123".',
+			validators: [
+				validators.required('Please enter your password.'),
+			],
 		},
 	},
 }))(TestForm);
