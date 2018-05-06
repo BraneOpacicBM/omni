@@ -2,6 +2,7 @@ import mysql from 'mysql';
 
 import createCreateTable from './createCreateTable';
 import createQuery from './createQuery';
+import createSelect from './createSelect';
 
 export default function mysqlPlugin(omni) {
 	const pool = mysql.createPool({
@@ -14,5 +15,6 @@ export default function mysqlPlugin(omni) {
 	omni.mysql = {
 		createTable: createCreateTable(pool),
 		query: createQuery(pool),
+		select: createSelect(pool),
 	};
 }
