@@ -1,5 +1,6 @@
 import mysql from 'mysql';
 
+import createCreateTable from './createCreateTable';
 import createQuery from './createQuery';
 
 export default function mysqlPlugin(omni) {
@@ -11,6 +12,7 @@ export default function mysqlPlugin(omni) {
 	});
 
 	omni.mysql = {
+		createTable: createCreateTable(pool),
 		query: createQuery(pool),
 	};
 }
