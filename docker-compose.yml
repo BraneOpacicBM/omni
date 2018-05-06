@@ -9,6 +9,16 @@ services:
     volumes:
     - .:/code
 
+  mysql:
+    image: mysql:8.0.11
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=omni
+    ports:
+    - 3306:3306
+    volumes:
+    - mysql-data:/var/lib/mysql
+
   server:
     build:
       context: .
@@ -26,3 +36,6 @@ services:
     command: yarn watch:webpack
     volumes:
     - .:/code
+
+volumes:
+  mysql-data:
