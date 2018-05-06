@@ -1,6 +1,7 @@
 import mysql from 'mysql';
 
 import createCreateTable from './createCreateTable';
+import createInsert from './createInsert';
 import createQuery from './createQuery';
 import createSelect from './createSelect';
 
@@ -14,6 +15,7 @@ export default function mysqlPlugin(omni) {
 
 	omni.mysql = {
 		createTable: createCreateTable(pool),
+		insert: createInsert(pool),
 		query: createQuery(pool),
 		select: createSelect(pool),
 	};
