@@ -1,0 +1,13 @@
+{
+  "name": "@ocm/mysql",
+  "version": "0.0.0",
+  "description": "MySQL storage plugin for Omni.",
+  "repository": "chiel/omni",
+  "author": "chielkunkels",
+  "main": "dist/server",
+  "browser": "dist/client",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.15.0"
+  }
+}
