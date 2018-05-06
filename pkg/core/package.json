@@ -9,6 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "@ocm/inputs": "^0.0.0",
+    "@ocm/mysql": "^0.0.0",
     "express": "^4.16.3",
     "hoist-non-react-statics": "^2.5.0",
     "prop-types": "^15.6.1",

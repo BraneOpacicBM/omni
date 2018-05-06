@@ -9,11 +9,26 @@ services:
     volumes:
     - .:/code
 
+  mysql:
+    image: mysql:8.0.2
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=omni
+    volumes:
+    - mysql-data:/var/lib/mysql
+
   server:
     build:
       context: .
       dockerfile: Dockerfile
     command: yarn watch:server
+    environment:
+    - MYSQL_DB_HOST=mysql
+    - MYSQL_DB_USER=root
+    - MYSQL_DB_PASS=root
+    - MYSQL_DB_NAME=omni
+    links:
+    - mysql
     ports:
     - 12831:12831
     volumes:
@@ -26,3 +41,6 @@ services:
     command: yarn watch:webpack
     volumes:
     - .:/code
+
+volumes:
+  mysql-data:

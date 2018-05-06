@@ -1,4 +1,5 @@
 import inputsPlugin from '@ocm/inputs';
+import mysqlPlugin from '@ocm/mysql';
 
 import inputTypes from './inputs';
 import sessionReducer from './reducers/session';
@@ -6,6 +7,7 @@ import routes from './routes';
 
 export default class Omni {
 	plugins = [
+		mysqlPlugin,
 		inputsPlugin,
 	];
 
