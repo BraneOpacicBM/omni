@@ -8,7 +8,8 @@
   "browser": "dist/client",
   "license": "MIT",
   "dependencies": {
-    "@ocm/validators": "^0.0.0"
+    "@ocm/validators": "^0.0.0",
+    "bcryptjs": "^2.4.3"
   },
   "peerDependencies": {
     "@ocm/core": "^0.0.0"
