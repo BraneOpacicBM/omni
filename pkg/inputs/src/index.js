@@ -1,3 +1,4 @@
+import InputEmail from './components/InputEmail';
 import InputPassword from './components/InputPassword';
 import InputMultiOption from './components/InputMultiOption';
 import InputSingleOption from './components/InputSingleOption';
@@ -5,6 +6,7 @@ import InputText from './components/InputText';
 import InputTextarea from './components/InputTextarea';
 
 export default function inputsPlugin(omni) {
+	omni.inputTypes.email = InputEmail;
 	omni.inputTypes.password = InputPassword;
 	omni.inputTypes.multi_option = InputMultiOption;
 	omni.inputTypes.single_option = InputSingleOption;

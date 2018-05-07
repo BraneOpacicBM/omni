@@ -1,5 +1,7 @@
 import bcrypt from 'bcryptjs';
 
+import init from './init';
+
 const schema = (
 	`create table if not exists auth_password (
 		user_id int(11) not null auto_increment,
@@ -43,4 +45,6 @@ export default async function authPasswordPlugin(omni) {
 			console.info('Created superadmin user %s', email);
 		}
 	}
+
+	init(omni);
 }
