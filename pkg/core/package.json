@@ -8,6 +8,7 @@
   "browser": "dist/client",
   "license": "MIT",
   "dependencies": {
+    "@ocm/auth": "^0.0.0",
     "@ocm/inputs": "^0.0.0",
     "@ocm/mysql": "^0.0.0",
     "@ocm/user": "^0.0.0",
