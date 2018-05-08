@@ -1,4 +1,7 @@
 {
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "@ocm/auth",
   "version": "0.0.0",
   "description": "Base authentication plugin for Omni.",

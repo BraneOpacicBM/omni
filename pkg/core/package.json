@@ -1,4 +1,7 @@
 {
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "@ocm/core",
   "version": "0.0.0",
   "description": "Omni core",

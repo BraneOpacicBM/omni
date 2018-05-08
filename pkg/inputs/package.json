@@ -1,4 +1,7 @@
 {
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "@ocm/inputs",
   "version": "0.0.0",
   "description": "Base inputs for Omni",

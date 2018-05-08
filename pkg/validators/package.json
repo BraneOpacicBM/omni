@@ -1,4 +1,7 @@
 {
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "@ocm/validators",
   "version": "0.0.0",
   "description": "Validators for Omni forms.",

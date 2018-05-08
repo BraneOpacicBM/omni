@@ -1,4 +1,7 @@
 {
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "@ocm/user",
   "version": "0.0.0",
   "description": "User plugin for Omni.",

@@ -1,4 +1,7 @@
 {
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "@ocm/auth-password",
   "version": "0.0.0",
   "description": "Password authentication plugin for Omni.",
