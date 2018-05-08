@@ -4,7 +4,6 @@ import mysqlPlugin from '@ocm/mysql';
 import userPlugin from '@ocm/user';
 
 import inputTypes from './inputs';
-import sessionReducer from './reducers/session';
 import routes from './routes';
 
 export default class Omni {
@@ -17,7 +16,7 @@ export default class Omni {
 
 	constructor() {
 		this.epics = [];
-		this.reducers = { session: sessionReducer };
+		this.reducers = {};
 		this.routes = [...routes];
 
 		this.pluginApi = {
