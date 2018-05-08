@@ -16,12 +16,14 @@ export default class Omni {
 	];
 
 	constructor() {
+		this.epics = [];
 		this.reducers = { session: sessionReducer };
 		this.routes = [...routes];
 
 		this.pluginApi = {
 			inputTypes,
 			addRoute: this.addRoute,
+			epics: this.epics,
 			reducers: this.reducers,
 		};
 	}

@@ -1,6 +1,17 @@
-import { combineReducers, createStore } from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
-export default function configureStore(reducers) {
+import api from './api';
+
+export default function configureStore(reducers, epics) {
 	const reducer = combineReducers(reducers);
-	return createStore(reducer);
+	const epic = combineEpics(...epics);
+
+	const middleware = applyMiddleware(
+		createEpicMiddleware(epic, {
+			dependencies: { api },
+		}),
+	);
+
+	return createStore(reducer, middleware);
 }

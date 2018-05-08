@@ -23,7 +23,7 @@ export default class OmniServer extends Omni {
 		await this.initPlugins();
 
 		this.app.use(express.static(`${__dirname}/public`));
-		this.app.use(createStoreMiddleware(this.reducers));
+		this.app.use(createStoreMiddleware(this.reducers, this.epics));
 
 		this.app.get('*', createHandleRequest(this.routes));
 
