@@ -1,4 +1,5 @@
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 
@@ -27,6 +28,7 @@ export default class OmniServer extends Omni {
 		await this.initPlugins();
 
 		this.app.use(express.static(`${__dirname}/public`));
+		this.app.use(cookieParser());
 		this.app.use(createStoreMiddleware(this.reducers, this.epics));
 
 		this.app.get('*', createHandleRequest(this.routes));
