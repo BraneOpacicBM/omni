@@ -13,8 +13,8 @@ export default function authPlugin(omni) {
 		component: () => <Login providers={providers} />,
 	});
 
-	const addProvider = (name, Component) => {
-		providers.push({ Component, name });
+	const addProvider = (name, Component, getSecret) => {
+		providers.push({ Component, getSecret, name });
 	};
 
 	const createToken = (type, subject, secret) => (
