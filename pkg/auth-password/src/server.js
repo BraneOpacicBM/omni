@@ -13,7 +13,7 @@ const schema = (
 const email = process.env.AUTH_PASSWORD_SUPERADMIN_EMAIL;
 const password = process.env.AUTH_PASSWORD_SUPERADMIN_PASSWORD;
 
-export default async function authPasswordPlugin(omni) {
+export default async function authPasswordPlugin(omni, next) {
 	if (!omni.mysql) {
 		console.error('Omni password auth plugin is dependent on the mysql plugin.');
 		return;
@@ -47,4 +47,5 @@ export default async function authPasswordPlugin(omni) {
 	}
 
 	init(omni);
+	next();
 }
