@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs';
 
 import init from './init';
+import createHandlePostLogin from './utils/createHandlePostLogin';
 
 const schema = (
 	`create table if not exists auth_password (
@@ -45,6 +46,8 @@ export default async function authPasswordPlugin(omni, next) {
 			console.info('Created superadmin user %s', email);
 		}
 	}
+
+	omni.api.post('/auth/password', createHandlePostLogin(omni));
 
 	init(omni);
 	next();
