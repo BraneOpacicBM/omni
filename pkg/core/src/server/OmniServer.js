@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 
 import createHandleRequest from './utils/createHandleRequest';
@@ -13,6 +14,7 @@ export default class OmniServer extends Omni {
 
 		this.api = express();
 		this.api.disable('x-powered-by');
+		this.api.use(cors());
 		this.pluginApi.api = this.api;
 
 		this.app = express();

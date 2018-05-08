@@ -12,6 +12,7 @@
     "@ocm/inputs": "^0.0.0",
     "@ocm/mysql": "^0.0.0",
     "@ocm/user": "^0.0.0",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "hoist-non-react-statics": "^2.5.0",
     "prop-types": "^15.6.1",
