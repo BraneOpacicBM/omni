@@ -32,6 +32,7 @@ services:
     links:
     - mysql
     ports:
+    - 12830:12830
     - 12831:12831
     volumes:
     - .:/code

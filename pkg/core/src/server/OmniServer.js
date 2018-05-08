@@ -11,6 +11,10 @@ export default class OmniServer extends Omni {
 	constructor() {
 		super();
 
+		this.api = express();
+		this.api.disable('x-powered-by');
+		this.pluginApi.api = this.api;
+
 		this.app = express();
 		this.app.disable('x-powered-by');
 	}
@@ -25,6 +29,10 @@ export default class OmniServer extends Omni {
 
 		this.app.use(notFoundMiddleware);
 		this.app.use(handleErrorMiddleware);
+
+		this.api.listen(12830, () => {
+			console.info('Omni api listening on port 12830');
+		});
 
 		this.app.listen(12831, () => {
 			console.info('Omni app listening on port 12831');
