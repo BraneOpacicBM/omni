@@ -5,5 +5,8 @@
   "repository": "chiel/omni",
   "author": "chielkunkels",
   "main": "dist",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jsonwebtoken": "^8.2.1"
+  }
 }

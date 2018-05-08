@@ -25,6 +25,7 @@ services:
     environment:
     - AUTH_PASSWORD_SUPERADMIN_EMAIL=john.doe@example.com
     - AUTH_PASSWORD_SUPERADMIN_PASSWORD=password1234
+    - AUTH_TOKEN_SALT=XPbzPCeQgScRFWoZEqvSWwGBDBysA6
     - MYSQL_DB_HOST=mysql
     - MYSQL_DB_USER=root
     - MYSQL_DB_PASS=root
