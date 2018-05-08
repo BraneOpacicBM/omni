@@ -3,6 +3,7 @@
   "name": "testbed",
   "version": "0.0.0",
   "dependencies": {
+    "@ocm/auth": "^0.0.0",
     "@ocm/auth-password": "^0.0.0",
     "@ocm/validators": "^0.0.0",
     "react": "^16.3.2"
