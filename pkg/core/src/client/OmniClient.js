@@ -18,7 +18,7 @@ export default class OmniClient extends Omni {
 			component: NotFoundError,
 		});
 
-		const store = configureStore(this.reducers);
+		const store = configureStore(this.reducers, this.epics);
 		window.store = store;
 
 		hydrate(

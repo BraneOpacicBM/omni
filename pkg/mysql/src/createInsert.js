@@ -1,7 +1,7 @@
 import createSelect from './createSelect';
 
 export default function createInsert(pool) {
-	return (table, data) => new Promise((resolve, reject) => {
+	return (table, data, idField) => new Promise((resolve, reject) => {
 		pool.getConnection((err, conn) => {
 			if (err) {
 				return reject(err);
@@ -14,7 +14,7 @@ export default function createInsert(pool) {
 					return reject(err);
 				}
 
-				createSelect(pool)(table, result.insertId)
+				createSelect(pool)(table, result.insertId, idField)
 					.then(resolve)
 					.catch(reject);
 			});
