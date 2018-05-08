@@ -15,10 +15,8 @@ export default class OmniServer extends Omni {
 		this.app.disable('x-powered-by');
 	}
 
-	start() {
-		this.plugins.forEach(plugin => {
-			plugin(this.pluginApi);
-		});
+	async start() {
+		await this.initPlugins();
 
 		this.app.use(express.static(`${__dirname}/public`));
 		this.app.use(createStoreMiddleware(this.reducers));

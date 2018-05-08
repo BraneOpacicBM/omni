@@ -30,6 +30,26 @@ export default class Omni {
 		this.routes[0].childRoutes.push(route);
 	}
 
+	initPlugins() {
+		return new Promise(resolve => {
+			const plugins = [...this.plugins];
+
+			const next = () => {
+				const plugin = plugins.shift();
+				if (!plugin) return resolve();
+
+				if (plugin.length === 1) {
+					plugin(this.pluginApi);
+					next();
+				} else {
+					plugin(this.pluginApi, next);
+				}
+			};
+
+			next();
+		});
+	}
+
 	use(plugin) {
 		if (typeof plugin !== 'function') {
 			throw new Error('Omni plugins need to be functions');
