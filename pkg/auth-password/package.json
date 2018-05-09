@@ -3,7 +3,7 @@
     "access": "public"
   },
   "name": "@ocm/auth-password",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Password authentication plugin for Omni.",
   "repository": "chiel/omni",
   "author": "chielkunkels",
@@ -11,7 +11,7 @@
   "browser": "dist/client",
   "license": "MIT",
   "dependencies": {
-    "@ocm/validators": "^0.0.0",
+    "@ocm/validators": "^0.0.1",
     "bcryptjs": "^2.4.3"
   },
   "peerDependencies": {

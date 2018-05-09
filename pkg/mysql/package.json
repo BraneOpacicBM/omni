@@ -3,7 +3,7 @@
     "access": "public"
   },
   "name": "@ocm/mysql",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "MySQL storage plugin for Omni.",
   "repository": "chiel/omni",
   "author": "chielkunkels",

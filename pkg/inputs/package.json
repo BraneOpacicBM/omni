@@ -3,7 +3,7 @@
     "access": "public"
   },
   "name": "@ocm/inputs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Base inputs for Omni",
   "repository": "chiel/omni",
   "author": "chielkunkels",
