@@ -1,9 +1,12 @@
 import { renderToString } from 'react-dom/server';
 import { Helmet } from 'react-helmet';
 
+import generateClientEnv from './generateClientEnv';
+
 export default function renderDocument(component, state) {
 	const markup = renderToString(component);
 	const helmet = Helmet.renderStatic();
+	const env = generateClientEnv();
 
 	/* eslint-disable indent */
 	return (
@@ -20,6 +23,7 @@ export default function renderDocument(component, state) {
 	<body>
 		<div id="omni-container">${markup}</div>
 		<script>
+			window.ENV = ${JSON.stringify(env)};
 			window.INITIAL_STATE = ${JSON.stringify(state)};
 		</script>
 		<script src="/assets/omni.js"></script>

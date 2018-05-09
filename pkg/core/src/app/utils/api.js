@@ -1,7 +1,9 @@
 import { ajax } from 'rxjs/observable/dom/ajax';
 import xhr2 from 'xhr2';
 
-const apiUrl = 'http://localhost:12830';
+const apiUrl = typeof window === 'undefined'
+	? process.env.API_URL
+	: window.ENV.API_URL;
 
 const XHR2 = typeof XMLHttpRequest !== 'undefined'
 	? XMLHttpRequest
