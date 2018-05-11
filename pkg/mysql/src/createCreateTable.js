@@ -1,9 +1,9 @@
 import createQuery from './createQuery';
 
 export default function createCreateTable(pool) {
-	return (table, query) => {
+	return async (table, query) => {
 		try {
-			const result = createQuery(pool)(query);
+			const result = await createQuery(pool)(query);
 			if (result.warningCount === 0) {
 				console.info(`Created ${table} table`);
 			}
