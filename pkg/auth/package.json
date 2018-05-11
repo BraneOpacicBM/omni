@@ -7,7 +7,8 @@
   "description": "Base authentication plugin for Omni.",
   "repository": "chiel/omni",
   "author": "chielkunkels",
-  "main": "dist",
+  "main": "dist/server",
+  "browser": "dist/client",
   "license": "MIT",
   "dependencies": {
     "jsonwebtoken": "^8.2.1"
