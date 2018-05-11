@@ -17,7 +17,7 @@ export default class OmniServer extends Omni {
 		this.api = express();
 		this.api.disable('x-powered-by');
 		this.api.use(cors());
-		this.api.use(bodyParser.urlencoded());
+		this.api.use(bodyParser.urlencoded({ extended: true }));
 		this.pluginApi.api = this.api;
 
 		this.app = express();
