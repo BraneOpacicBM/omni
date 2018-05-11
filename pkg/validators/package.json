@@ -3,7 +3,7 @@
     "access": "public"
   },
   "name": "@ocm/validators",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Validators for Omni forms.",
   "repository": "chiel/omni",
   "author": "chielkunkels",
