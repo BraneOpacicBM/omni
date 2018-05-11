@@ -31,6 +31,10 @@ export default class OmniServer extends Omni {
 		this.app.use(cookieParser());
 		this.app.use(createStoreMiddleware(this.reducers, this.epics));
 
+		if (this.pluginApi.auth) {
+			this.app.use(this.pluginApi.auth.ensureAuthMiddleware);
+		}
+
 		this.app.get('*', createHandleRequest(this.routes));
 
 		this.app.use(notFoundMiddleware);

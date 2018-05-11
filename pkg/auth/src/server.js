@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 import init from './init';
+import createEnsureAuthMiddleware from './utils/createEnsureAuthMiddleware';
 
 const salt = process.env.AUTH_TOKEN_SALT;
 
@@ -17,4 +18,5 @@ export default function authPlugin(omni) {
 	);
 
 	omni.auth.createToken = createToken;
+	omni.auth.ensureAuthMiddleware = createEnsureAuthMiddleware(omni);
 }
