@@ -4,3 +4,4 @@ node_modules
 
 # files
 lerna-debug.log
+yarn-error.log
