@@ -6,7 +6,6 @@
     "@ocm/auth": "^0.0.2",
     "@ocm/auth-password": "^0.0.2",
     "@ocm/validators": "^0.0.2",
-    "react": "^16.3.2",
-    "react-google-maps": "^9.4.5"
+    "react": "^16.3.2"
   }
 }
