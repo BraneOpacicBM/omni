@@ -28,6 +28,34 @@ const plugins = [
 	}),
 ];
 
+function createRules(presets) {
+	return [
+		{
+			test: /\.js$/,
+			exclude: /node_modules/,
+			use: {
+				loader: 'babel-loader',
+				options: {
+					presets,
+				},
+			},
+		},
+		{
+			test: /\.css$/,
+			use: 'modular-css-webpack/loader',
+		},
+		{
+			test: /\.(jpe?g|png|gif|svg)$/i,
+			loader: 'file-loader',
+			options: {
+				name: '[name].[ext]',
+				outputPath: 'public/img',
+				publicPath: '/img',
+			},
+		},
+	];
+}
+
 module.exports = [
 	{
 		mode: isProduction ? 'production' : 'development',
@@ -42,31 +70,16 @@ module.exports = [
 		},
 		plugins,
 		module: {
-			rules: [
-				{
-					test: /\.js$/,
-					exclude: /node_modules/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: [
-								['@babel/preset-env', {
-									modules: false,
-									targets: {
-										node: '9.5',
-									},
-								}],
-								'@babel/preset-react',
-								'@babel/preset-stage-1',
-							],
-						},
+			rules: createRules([
+				['@babel/preset-env', {
+					modules: false,
+					targets: {
+						node: '9.5',
 					},
-				},
-				{
-					test: /\.css$/,
-					use: 'modular-css-webpack/loader',
-				},
-			],
+				}],
+				'@babel/preset-react',
+				'@babel/preset-stage-1',
+			]),
 		},
 	},
 	{
@@ -79,30 +92,15 @@ module.exports = [
 		devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
 		plugins,
 		module: {
-			rules: [
-				{
-					test: /\.js$/,
-					exclude: /node_modules/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: [
-								['@babel/preset-env', {
-									targets: {
-										browsers,
-									},
-								}],
-								'@babel/preset-react',
-								'@babel/preset-stage-1',
-							],
-						},
+			rules: createRules([
+				['@babel/preset-env', {
+					targets: {
+						browsers,
 					},
-				},
-				{
-					test: /\.css$/,
-					use: 'modular-css-webpack/loader',
-				},
-			],
+				}],
+				'@babel/preset-react',
+				'@babel/preset-stage-1',
+			]),
 		},
 	},
 ];
