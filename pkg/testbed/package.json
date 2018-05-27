@@ -1,9 +1,9 @@
 {
   "private": true,
   "name": "testbed",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
-    "@ocm/auth": "^0.0.2",
+    "@ocm/auth": "^0.0.3",
     "@ocm/auth-password": "^0.0.2",
     "@ocm/validators": "^0.0.2",
     "react": "^16.3.2"
